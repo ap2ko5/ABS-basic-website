@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ABS Arabian Car Rental</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-container">
+                        <img src="abs-logo.png" alt="ABS Logo" class="logo-img">
+                        <div class="logo-text">
+                            <h1>ABS</h1>
+                            <h2>ARABIAN CAR RENTAL</h2>
+                            <p class="tagline">Your City • Your Ride • Your Budget</p>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navigation">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="booking.html" class="nav-link">Booking</a></li>
+                        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-pattern">
+                    <div class="pattern-dots"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <main class="page-section">
+        <div class="container">
+            <div class="page-header">
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you! Please fill out the form or use the contact details below.</p>
+            </div>
+
+            <div class="contact-layout">
+                <div class="contact-form-wrapper">
+                    <form id="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            <div class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="you@example.com">
+                            <div class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                            <div class="error-message"></div>
+                        </div>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                    <div id="form-success" class="form-success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Thank you! Your message has been sent successfully.</p>
+                    </div>
+                </div>
+
+                <div class="contact-details-wrapper">
+                    <h3>Our Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+971558240119">+971 558240119</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+971558527437">+971 558527437</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+971504868469">+971 504868469</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:sales@absacars.com">sales@absacars.com</a></li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/971558240119" target="_blank">Chat on WhatsApp</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Dubai, United Arab Emirates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ABS Arabian Car Rental. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

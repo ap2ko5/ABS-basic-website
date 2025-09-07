@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Car - ABS Arabian Car Rental</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-container">
+                        <img src="abs-logo.png" alt="ABS Logo" class="logo-img">
+                        <div class="logo-text">
+                            <h1>ABS</h1>
+                            <h2>ARABIAN CAR RENTAL</h2>
+                            <p class="tagline">Your City • Your Ride • Your Budget</p>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navigation">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="booking.html" class="nav-link active">Booking</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-pattern">
+                    <div class="pattern-dots"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Booking Section -->
+    <main class="page-section">
+        <div class="container">
+            <div class="page-header">
+                <h1>Reserve Your Car</h1>
+                <p>Complete the form below to request your vehicle booking.</p>
+            </div>
+
+            <div class="form-wrapper">
+                <form id="booking-form" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                            <div class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+                            <div class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+971 55 123 4567">
+                            <div class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="car-select">Choose a Car</label>
+                            <select id="car-select" name="car" required>
+                                <option value="" disabled selected>Select a car...</option>
+                                <option value="Nissan Sunny 2022">Nissan Sunny 2022</option>
+                                <option value="Audi TT">Audi TT (or similar Sports Car)</option>
+                                <option value="Other Sedan">Other Sedan</option>
+                            </select>
+                            <div class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickup-date">Pickup Date</label>
+                            <input type="date" id="pickup-date" name="pickup-date" required>
+                            <div class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="return-date">Return Date</label>
+                            <input type="date" id="return-date" name="return-date" required>
+                            <div class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Special Requests (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="e.g., child seat, specific model preference"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Booking Request</button>
+                </form>
+                <div id="form-success" class="form-success-message" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Thank you! Your booking request has been sent. We will contact you shortly to confirm.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ABS Arabian Car Rental. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
