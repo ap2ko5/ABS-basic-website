@@ -47,19 +47,66 @@ document.addEventListener('DOMContentLoaded', function() {
     const bookingForm = document.getElementById('booking-form');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', e => handleFormSubmit(e, contactForm));
+        contactForm.addEventListener('submit', (e) => handleFormSubmit(e, contactForm));
     }
     if (bookingForm) {
         // Set min date for date pickers
         const today = new Date().toISOString().split('T')[0];
         bookingForm.querySelector('#pickup-date').setAttribute('min', today);
         bookingForm.querySelector('#return-date').setAttribute('min', today);
-        bookingForm.addEventListener('submit', e => handleFormSubmit(e, bookingForm));
+        bookingForm.addEventListener('submit', (e) => handleFormSubmit(e, bookingForm));
     }
 });
 
-function handleFormSubmit(event, form) {
+async function handleFormSubmit(event, form) {
     event.preventDefault();
+    if (!validateForm(form)) {
+        console.log('Form is invalid.');
+        return;
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    // This is a placeholder. Replace with your actual backend endpoint.
+    // For example, '/.netlify/functions/submit-form' if using Netlify.
+    const endpoint = form.id === 'booking-form' ? '/api/booking' : '/api/contact';
+
+    try {
+        // In a real application, you would send the data to your backend here.
+        // Example using fetch:
+        /*
+        const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Server error: ${await response.text()}`);
+        }
+        */
+
+        // Simulating a network request for demonstration purposes.
+        // Remove this line when you have a real backend endpoint.
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        console.log('Form is valid. Submitting...', data);
+
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+
+    } catch (error) {
+        console.error('There was a problem with the submission:', error);
+        alert('There was an error submitting the form. Please try again.');
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+    }
+    /* Old synchronous code:
     if (validateForm(form)) {
         console.log('Form is valid. Submitting...');
         form.style.display = 'none';
@@ -67,6 +114,7 @@ function handleFormSubmit(event, form) {
     } else {
         console.log('Form is invalid.');
     }
+    */
 }
 
 function validateForm(form) {
